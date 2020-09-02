@@ -1,21 +1,40 @@
 import React from 'react';
-import './App.css';
+import Main from  './components/main'
+import './App.css'
+import { Layout , Header ,  Navigation, Content,Drawer} from 'react-mdl';
+import{Link} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>BBY LUV YOU</h1>
-        <h1> ---gds---Raja for you  </h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        > 
-         
-        </a>
-      </header>
+      <div className="demo-big-content">
+    <Layout>
+        <Header className ="header" title="Title" scroll>
+            <Navigation>
+                <Link to="/resume">Resume</Link>
+                <Link to="/aboutme">AboutMe</Link>
+                <Link to="/Project">Projects</Link>
+                <Link to="/contact">Contact</Link>
+            </Navigation>
+        </Header>
+        <Drawer title="Title" className="drawer" >
+            <Navigation className="drawer">
+                <Link to="/resume">Resume</Link>
+                <Link to="/aboutme">AboutMe</Link>
+                <Link to="/project">Projects</Link>
+                <Link to="/contact">Contact </Link>
+            </Navigation>
+        </Drawer>
+        <Content>
+            <div className="page-content" />
+            <Main/>
+        </Content>
+    </Layout>
+</div>
+
+
+    <h1>Test APP </h1>
+
     </div>
   );
 }
